@@ -1,11 +1,5 @@
 import React, { useEffect } from "react";
 import "./App.css";
-import Intro from "./components/Intro/Intro";
-import Header from "./components/Header/Header";
-import Prices from "./components/Prices/Prices";
-import Content from "./components/Content/Content";
-import Reviews from "./components/Reviews/Reviews";
-import Form from "./components/Form/Form";
 import Alert from "./components/Alert/Alert";
 import * as ActionCreators from "./redux/ActionCreators";
 import { bindActionCreators } from "redux";
@@ -26,26 +20,11 @@ const App = () => {
   const dispatch = useDispatch();
   const { showAlert } = bindActionCreators(ActionCreators, dispatch);
 
-  const showAlertHandler = () => {
-    showAlert(
-      true,
-      "bg-warning",
-      "can't submit an empty field",
-      "Please fill all required fields before submitting"
-    );
-  };
-
   return (
     <div>
       {/* routing functionalities goes here */}
-      <Header />
-      <div className="App-Root">
-        <Intro />
-        <Prices />
-        <Content />
-        <Reviews />
-        <Form showAlert={showAlertHandler} />
-      </div>
+
+      <div className="App-Root"></div>
       {/* routing functionalities goes here */}
       <CSSTransition
         in={alert.show}
